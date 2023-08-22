@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Analyzer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        width: 600px;
+        padding: 20px;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header img {
+        max-width: 20%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+      }
+      h2 {
+        margin-bottom: 10px;
+      }
+      .btn-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      #output-container {
+        margin-top: 20px;
+        position: relative;
+      }
+      #output {
+        border: 1px solid #ccc;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      #copyButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      #copyButton:hover {
+        opacity: 1;
+      }
+      #copyIcon {
+        margin-right: 5px;
+      }
+      #output:hover #copyButton {
+        opacity: 1;
+      }
+      #copyButton.success {
+        color: #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>WEB ANALYZER</h1>
+      <img src="../images/icon16-1.png" alt="Web Analyser Logo" />
+      <h2>How do you want to analyze the web page?</h2>
+    </div>
+    <div class="btn-container">
+      <button class="btn" id="summaryButton">Provide Summary</button>
+      <button class="btn" id="pointsButton">Provide Major Points</button>
+    </div>
+    <div id="output-container">
+      <div id="output">
+        <!-- Your output text here -->
+      </div>
+      <!-- <button id="copyButton" class="success" onclick="copyText()">
+        <span id="copyIcon">📋</span> Click to copy Text
+      </button> -->
+    </div>
+    <div id="loading" style="display: none">Loading...</div>
+    <script src="../scripts/popup.js"></script>
+    <!-- <script>
+      function copyText() {
+        var outputText = document.getElementById("output").innerText;
+        var textArea = document.createElement("textarea");
+        textArea.value = outputText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+
+        var copyButton = document.getElementById("copyButton");
+        copyButton.textContent = "Text Copied";
+        copyButton.classList.add("success");
+      }
+    </script> -->
+  </body>
+</html>
